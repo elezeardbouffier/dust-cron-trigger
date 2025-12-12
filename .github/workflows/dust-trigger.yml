@@ -1,0 +1,14 @@
+name: Dust Drive Sync
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Dust Webhook
+        run: |
+          curl -X POST https://dust.tt/api/v1/w/TiSkzHDskh/triggers/hooks/whs_07TSt7sba91/3XUXVdlSbPk2yA60C1xsyr83vm7P1dglwOd2Eer0f7E8WM3MlIsuDAMXGGSgLrcT
